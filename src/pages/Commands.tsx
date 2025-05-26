@@ -1,11 +1,9 @@
 
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/layout/AppSidebar"
-import { ConnectionStatus } from "@/components/dashboard/ConnectionStatus"
-import { StatsCards } from "@/components/dashboard/StatsCards"
-import { RecentLogs } from "@/components/dashboard/RecentLogs"
+import { CommandsManager } from "@/components/commands/CommandsManager"
 
-const Index = () => {
+const Commands = () => {
   return (
     <SidebarProvider>
       <div className="min-h-screen flex w-full bg-gradient-to-br from-gray-50 to-gray-100">
@@ -15,24 +13,16 @@ const Index = () => {
             <div className="flex h-16 items-center gap-4 px-6">
               <SidebarTrigger />
               <div className="flex-1">
-                <h1 className="text-xl font-semibold">Dashboard</h1>
+                <h1 className="text-xl font-semibold">Comandos</h1>
                 <p className="text-sm text-muted-foreground">
-                  Painel principal do WhatsApp Bot Manager
+                  Gerencie todos os comandos do bot
                 </p>
               </div>
             </div>
           </header>
           
-          <div className="flex-1 p-6 space-y-6">
-            <div className="grid gap-6 lg:grid-cols-3">
-              <div className="lg:col-span-2 space-y-6">
-                <StatsCards />
-                <RecentLogs />
-              </div>
-              <div>
-                <ConnectionStatus />
-              </div>
-            </div>
+          <div className="flex-1 p-6">
+            <CommandsManager />
           </div>
         </main>
       </div>
@@ -40,4 +30,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default Commands
